@@ -140,26 +140,32 @@ POST /users
   "name": "John",
   "dob": "1990-01-01"
 }
-
+---
 🔍 Get User
+```bash
 GET /users/:id
+---
 
 📃 List Users
+```bash
 GET /users?page=1&limit=10
-
+---
 ✏️ Update User
+```bash
 PUT /users/:id
 {
   "name": "John Updated",
   "dob": "1991-01-01"
 }
-
+---
 ❌ Delete User
+```bash
 DELETE /users/:id
 
 🧪 Testing
 
 Run all tests:
+```bash 
 go test ./...
 
 🧠 What makes this project special?
