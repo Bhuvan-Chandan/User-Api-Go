@@ -140,7 +140,8 @@ POST /users
   "name": "John",
   "dob": "1990-01-01"
 }
----
+```bash
+
 🔍 Get User
 ```bash
 GET /users/:id
