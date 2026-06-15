@@ -135,7 +135,7 @@ http://localhost:3000
 ➕ Create User
 
 POST /users
-
+```bash
 {
   "name": "John",
   "dob": "1990-01-01"
