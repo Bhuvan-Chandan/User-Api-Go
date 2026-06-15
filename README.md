@@ -1,52 +1,98 @@
-# Go User API (CRUD + PostgreSQL + SQLC)
+# 🚀 Go User API
 
-A production-ready REST API built using Go (Fiber), PostgreSQL, and SQLC. The project follows clean architecture principles with clear separation of concerns across handler, service, and repository layers. It demonstrates backend engineering practices such as database integration, validation, structured logging, testing, and scalable system design.
+A production-ready REST API built with **Go (Fiber)**, **PostgreSQL**, and **SQLC**.  
+This project demonstrates a clean architecture backend with real-world patterns like service layering, type-safe queries, validation, logging, and testing.
 
-## Features
+---
 
-This API provides complete CRUD functionality for user management including creating, retrieving, updating, and deleting users. It supports pagination using limit and offset parameters for efficient data retrieval. PostgreSQL is used as the database layer with SQLC generating type-safe queries at compile time. Input validation is implemented using go-playground/validator to ensure request integrity. Structured logging is handled using Uber Zap for better observability and debugging. The system follows a clean architecture approach where handlers manage HTTP requests, services contain business logic, and repositories handle database interactions. The application also calculates user age dynamically from date of birth. Unit tests are implemented for both handler and service layers to ensure reliability and correctness.
+## ⚡ Tech Stack
 
-## Tech Stack
+🟢 Go (Golang) — backend language  
+⚡ Fiber — fast HTTP framework  
+🐘 PostgreSQL — relational database  
+🧩 SQLC — type-safe SQL generator  
+🪵 Zap — structured logging  
+✅ Validator.v10 — request validation  
 
-Go (Golang), Fiber Web Framework, PostgreSQL, SQLC, Zap Logger, Validator.v10
+---
 
-## Project Structure
+## ✨ Features
 
-cmd/server → Application entry point responsible for starting the server  
-db/migrations → Database migration files used to create and update schema  
-db/sqlc → SQLC generated type-safe database code  
-internal/handler → HTTP layer responsible for request handling and response formatting  
-internal/service → Business logic layer containing core application rules  
-internal/repository → Database access layer handling all DB interactions  
-internal/logger → Centralized logging configuration using Zap  
-internal/routes → API route definitions and endpoint mapping  
+🔥 Full CRUD operations (Create, Read, Update, Delete)  
+📄 Pagination support (limit & offset)  
+🧠 Clean Architecture (Handler → Service → Repository)  
+🎂 Age calculation from Date of Birth  
+🛡️ Input validation for safe requests  
+📊 Structured logs using Zap  
+🧪 Unit tested handler & service layers  
+⚡ Type-safe database queries using SQLC  
 
-## Setup Instructions
+---
 
-First, clone the repository using git clone https://github.com/your-username/go-user-api.git and navigate into the project directory using cd go-user-api. Create a PostgreSQL database named userdb using CREATE DATABASE userdb. Run database migrations using migrate -path db/migrations -database "postgres://postgres:password@localhost:5432/userdb?sslmode=disable" up. Start the application using go run cmd/server/main.go. Once started, the server will run on http://localhost:3000.
+## 🏗️ Project Architecture
 
-## API Endpoints
 
-The API exposes the following endpoints:
+cmd/server → App entry point 🚀
+db/migrations → Database schema 📦
+db/sqlc → Generated SQL queries 🧩
+internal/handler → HTTP layer 🌐
+internal/service → Business logic 🧠
+internal/repository → Database layer 🗄️
+internal/logger → Logging system 🪵
+internal/routes → API routes 🛣️
 
-Create User using POST /users with a JSON body containing name and dob fields.  
-Retrieve a single user using GET /users/:id.  
-List all users with pagination using GET /users?page=1&limit=10.  
-Update user details using PUT /users/:id with updated name and dob values.  
-Delete a user using DELETE /users/:id.
 
-## Testing
+---
 
-Unit tests are included for both handler and service layers. You can run all tests using the command go test ./....
+## ⚙️ Setup Guide
 
-## Architecture
+### 1️⃣ Clone the repo
+```bash
+git clone https://github.com/your-username/go-user-api.git
+cd go-user-api
+2️⃣ Create database
+CREATE DATABASE userdb;
+3️⃣ Run migrations
+migrate -path db/migrations -database "postgres://postgres:password@localhost:5432/userdb?sslmode=disable" up
+4️⃣ Start server 🚀
+go run cmd/server/main.go
 
-The application follows a layered architecture pattern to ensure separation of concerns and maintainability. The handler layer is responsible for handling HTTP requests and formatting responses. The service layer contains business logic including validation and transformations such as age calculation from date of birth. The repository layer is responsible for database operations using SQLC-generated queries. This structure improves scalability, testability, and code clarity.
+Server runs at:
 
-## Key Highlights
+http://localhost:3000
+📡 API Endpoints
+➕ Create User
+POST /users
+{
+  "name": "John",
+  "dob": "1990-01-01"
+}
+🔍 Get User
+GET /users/:id
+📃 List Users
+GET /users?page=1&limit=10
+✏️ Update User
+PUT /users/:id
+{
+  "name": "John Updated",
+  "dob": "1991-01-01"
+}
+❌ Delete User
+DELETE /users/:id
+🧪 Testing
 
-This project uses SQLC for compile-time type-safe SQL query generation which eliminates runtime SQL errors. Context-aware database operations are used for better request handling. Centralized validation ensures data integrity before processing. Structured logging using Zap improves observability and debugging. Pagination is efficiently implemented using SQL limit and offset. The architecture is modular and designed for scalability and future enhancements.
+Run all tests:
 
-## Author
+go test ./...
+🧠 What makes this project special?
 
-This project was built as part of a backend engineering assignment using Go, PostgreSQL, and SQLC. The focus was on clean architecture, scalability, maintainability, and production-ready backend development practices.
+💡 Built with real-world backend architecture
+💡 Clean separation of concerns
+💡 Fully testable structure
+💡 Production-style logging
+💡 Scalable folder design
+💡 SQLC ensures zero raw SQL runtime errors
+
+👨‍💻 Author
+
+Built as a backend engineering project using Go, PostgreSQL, and SQLC.
