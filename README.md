@@ -110,24 +110,24 @@ internal/routes → API routes 🛣️
 ## ⚙️ Setup Guide
 
 ### 1️⃣ Clone the repo
-```bash
+
 git clone https://github.com/your-username/go-user-api.git
 cd go-user-api
 
 2️⃣ Create database
-```bash
+
 CREATE DATABASE userdb;
 
 3️⃣ Run migrations
----bash
+
 migrate -path db/migrations -database "postgres://postgres:password@localhost:5432/userdb?sslmode=disable" up
 
 4️⃣ Start server 🚀
-```bash
+
 go run cmd/server/main.go
 
 Server runs at:
-```bash
+
 http://localhost:3000
 
 📡 API Endpoints
