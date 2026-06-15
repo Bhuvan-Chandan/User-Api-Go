@@ -105,8 +105,6 @@ internal/logger → Logging system 🪵
 internal/routes → API routes 🛣️
 
 
----
-
 ## ⚙️ Setup Guide
 
 ### 1️⃣ Clone the repo
@@ -135,38 +133,37 @@ http://localhost:3000
 ➕ Create User
 
 POST /users
-```bash
+
 {
   "name": "John",
   "dob": "1990-01-01"
 }
-```bash
+
 
 🔍 Get User
-```bash
+
 GET /users/:id
----
 
 📃 List Users
-```bash
+
 GET /users?page=1&limit=10
----
+
 ✏️ Update User
-```bash
+
 PUT /users/:id
 {
   "name": "John Updated",
   "dob": "1991-01-01"
 }
----
+
 ❌ Delete User
-```bash
+
 DELETE /users/:id
 
 🧪 Testing
 
 Run all tests:
-```bash 
+
 go test ./...
 
 🧠 What makes this project special?
